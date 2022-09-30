@@ -25,14 +25,14 @@ value ->{
 
 var student_Information ={
     name : 'Muthukumar',
-    age : '23',
-    roll_no : '1425',
+    age : 23,
+    roll_no : 1425,
     result : true
 };
 var student_Information_1 ={
     name : 'sridhar',
-    age : '24',
-    roll_no : '1825',
+    age : 24,
+    roll_no : 1825,
     result : true
 };
 console.log(student_Information);
@@ -46,26 +46,26 @@ console.log(student_Information);
 
  // To read a value from object -> object_variable_name.key;
  console.log(student_Information.name);
- console.log(student_Information.roll_no);
+ console.log(student_Information.result);
 
  // To edit a value from object -> object_variable_name.key = value;
  student_Information.name = "Raghuvaran";
- console.log(student_Information);
+ console.log(student_Information.name);
 
  // To Add a new value to object -> object_variable_name.NewKey = value;
  student_Information.mobile_number = 123456788;
  student_Information.grade = "A+";
- console.log(student_Information);
+ console.log(student_Information.mobile_number);
 
  // To Delete a value from object -> delete object_variable_name.key;
  delete student_Information.result;
- console.log(student_Information);
+ console.log(student_Information.result);
 
  //-----------OBJECT------------
 
  // ARRAY
  // Syntax - var array_variable_name = [value1, value2, value3,..., valueN];
- var record_list = [
+ var record_list = [ 
     {
         name: "Velu",
         age : 23
@@ -94,11 +94,24 @@ console.log(student_Information);
   record_list[0].name = "Vasu";
   console.log(record_list);
 
+  // To add a new value to Array - array_variable_name.push(value); -> Insert Last in array
+  record_list.push({name: "Vikram", age: 45});
+  console.log(record_list);
+
+  // To change the Direction of the value in Array - array_variable_name.unshift(value); ->  Insert First in Array
+  record_list.unshift({name: "kumar", age: 30});
+  console.log(record_list);
+
+  // To Delete a Particular value from an Array - array_variable_name.splice(index, deleteCount);
+  record_list.splice(1,1);
+  console.log(record_list.splice(1,1));
+
+
   /*
   Function -> Block of Code
   Syntax : (Function Definition)
 
-  function function_name(){
+  function function_name(var_name_1, var_name_2,...var_name_N){// Arguments
     // Code of Block
   };
 
@@ -107,14 +120,130 @@ console.log(student_Information);
   To Run/Execute a Function :
   Syntax : (Function Call/ Function Invocation)
 
-  function_name();
+  function_name(value1, value2....valueN); //Parameters
   */
 
   function on_display(){
-    var number_1 = 35;
-    var number_2 = 35;
-    var result = number_1 + number_2;
+    var number_1 = prompt("Enter Number 1 Value");
+    var value_1 = parseInt(number_1);
+    var number_2 = prompt("Enter Number 2 Value");
+    var value_2 = parseInt(number_2);
+    var result = value_1 + value_2;
     console.log(result);
   }
+  on_display();
 
- 
+  function on_login(){
+    var name = "Muthukumar";
+    var password = "1234";
+    console.log("The password is", password);
+  }
+
+  //Prompt 
+  function on_signin(){
+    var name = prompt("Please enter a valid username");
+    console.log(name);
+  }
+  on_signin();
+  // Function using Paramaters & Arguments
+  function on_addition(num_1, num_2, num_3, num_4){
+    var result = num_1 + num_2 + num_3 + num_4;
+    console.log(result);
+  }
+  on_addition(20, 40, 30, 40);
+
+/* Operators
+  1. Arithmetic Operator --> +, -, *, /, %, ++, --
+  2. Assignment Operator --> =
+  3. Comparison Operator --> ==, ===, <, <=, >, >=, !=, !==
+  4. Logical Operator --> &&, ||, !
+*/
+
+//Syntax : IF-ELSE
+// if(condition){
+//   // Code Block 1
+// }
+// else{
+//   // Code Block 2
+// }
+
+/*Problem : Check Whether given age is eligible for voting
+  1. Read number value, during program execution(Prompt)
+  2. Condition : Age Should be Greater than or equal to 18.
+  3. If age is greater than 18, print Eligible for vote
+  4. If age is less than 18, print Not Eligible for vote
+  */
+
+  function check_voting_age(){
+    var value = prompt('Enter a user age...');
+    var age = parseInt(value);
+
+    if(age >= 18 ){
+      console.log("Eligible for vote");
+    }
+    else{
+      console.log("Not Eligible for vote");
+    }
+  }
+
+//Syntax - Multiple IF-ELSE
+
+// if(condition){
+//   // Code Block 1
+// }
+// else if(condition 2){
+//   // Code Block 2
+// }
+// else{
+//   // Code Block 3
+// }
+
+/*Problem: Check the age Category of a person
+ 1. Read a number value, during program execution(Prompt)
+ 2. If age is less than 18, print the user is Minor
+ 3. If age is greater than or equal to 18 and age is less than 60, Print Major
+ 4. If age is greater than 60, print Senior Citizen
+ */
+
+// function check_age_category(){
+// var value = prompt("Enter User age");
+// var age = parseInt(value);
+
+// if(age < 18){
+//   console.log("The user is Minor");
+// }
+// else if(age >= 18 && age < 60){
+//   console.log("The user is Major");
+// }
+// else{
+//   console.log("The user is Senior Citizen");
+// }
+
+// }
+
+// Syntax - FOR Loop
+// for(initialization; condition; increment/decrement){
+//   // Code Block
+// }
+
+// for(var count = 1; count <= 5; count++){
+//   console.log("The Loop is running on ", count, " times")
+// }
+
+// Program : Read a number and print Even numbers till that Nth number.
+// Steps:
+// 1. Read a number value during program Run (prompt);
+// 2. Logic - Number % 2 -> 0;
+// 3. Use For loop for finding the limit of number
+
+
+function print_even_numbers(){
+  var value = prompt("Enter a Number Value");
+  var number = parseInt(value);
+
+  for(var limit = 0; limit <= number; limit++) {
+    if(limit % 2 === 0){
+      console.log("The Even Number is", limit )
+    }
+ }
+}
