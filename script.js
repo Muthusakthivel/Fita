@@ -19,7 +19,7 @@ var variable_name = value;
 value ->{
     first_name : 'shdf',
     last_name : 'sdas',
-    age : '23',
+    age : 23
 }
 */
 
@@ -55,7 +55,7 @@ console.log(student_Information);
  // To Add a new value to object -> object_variable_name.NewKey = value;
  student_Information.mobile_number = 123456788;
  student_Information.grade = "A+";
- console.log(student_Information.mobile_number);
+ console.log(student_Information.grade);
 
  // To Delete a value from object -> delete object_variable_name.key;
  delete student_Information.result;
@@ -92,7 +92,7 @@ console.log(student_Information);
 
   // To edit a value from Array - array_variable_name[index] = Value;
   record_list[0].name = "Vasu";
-  console.log(record_list);
+  console.log(record_list[0].name);
 
   // To add a new value to Array - array_variable_name.push(value); -> Insert Last in array
   record_list.push({name: "Vikram", age: 45});
@@ -100,9 +100,9 @@ console.log(student_Information);
 
   // To change the Direction of the value in Array - array_variable_name.unshift(value); ->  Insert First in Array
   record_list.unshift({name: "kumar", age: 30});
-  console.log(record_list);
+  console.log(record_list); 
 
-  // To Delete a Particular value from an Array - array_variable_name.splice(index, deleteCount);
+  // To Delete a Particular value from an Array - array_variable_name.splice(index, 1);
   record_list.splice(1,1);
   console.log(record_list.splice(1,1));
 
@@ -135,7 +135,7 @@ console.log(student_Information);
 
   function on_login(){
     var name = "Muthukumar";
-    var password = "1234";
+    var password = 1234;
     console.log("The password is", password);
   }
 
@@ -150,7 +150,7 @@ console.log(student_Information);
     var result = num_1 + num_2 + num_3 + num_4;
     console.log(result);
   }
-  on_addition(20, 40, 30, 40);
+  on_addition(20, 20, 20, 20);
 
 /* Operators
   1. Arithmetic Operator --> +, -, *, /, %, ++, --
@@ -194,6 +194,8 @@ console.log(student_Information);
 // else if(condition 2){
 //   // Code Block 2
 // }
+// else if(condition 3){
+//}
 // else{
 //   // Code Block 3
 // }
@@ -205,30 +207,29 @@ console.log(student_Information);
  4. If age is greater than 60, print Senior Citizen
  */
 
-// function check_age_category(){
-// var value = prompt("Enter User age");
-// var age = parseInt(value);
+function check_age_category(){
+var value = prompt("Enter User age");
+var age = parseInt(value);
 
-// if(age < 18){
-//   console.log("The user is Minor");
-// }
-// else if(age >= 18 && age < 60){
-//   console.log("The user is Major");
-// }
-// else{
-//   console.log("The user is Senior Citizen");
-// }
-
-// }
+if(age < 18){
+  console.log("The user is Minor");
+}
+else if(age >= 18 && age < 60){
+  console.log("The user is Major");
+}
+else{
+  console.log("The user is Senior Citizen");
+}
+}
 
 // Syntax - FOR Loop
 // for(initialization; condition; increment/decrement){
 //   // Code Block
 // }
 
-// for(var count = 1; count <= 5; count++){
-//   console.log("The Loop is running on ", count, " times")
-// }
+for(var count = 1; count <= 500; count++){
+  console.log("The Loop is running on ", count, " times")
+}
 
 // Program : Read a number and print Even numbers till that Nth number.
 // Steps:
@@ -246,4 +247,91 @@ function print_even_numbers(){
       console.log("The Even Number is", limit )
     }
  }
+}
+
+//Syntax - FOR IN
+// for(var variable_name in object_variable_name){
+
+// }
+
+  for(var value in student_Information) {
+      console.log(student_Information[value]);
+  }
+
+//Syntax - FOR OF
+// for(var variable_name of array_variable_name){
+
+// }
+
+for(var value of record_list) {
+  console.log(value);
+}
+
+//Syntax - While Loop
+// while(condition){
+
+// }
+var count = 1;
+while(count <= 10){
+  console.log("The count is ", count);
+  count++;
+}
+//Syntax - Do while loop
+// do{
+// }while(condition)
+
+var count = 1;
+do{
+  console.log("The Count is ", count);
+  count++;
+}while(count <=10);
+
+//Syntax - Switch Case
+// Switch (expression){
+//  case value 1:
+    // Code Block
+  //  break;
+// case value 2:
+  // Code Block
+  // break;
+//  default:
+    // Code Block  
+//}
+
+switch(2){
+  case 1:
+    console.log("This is One");
+    break;
+  case 2:
+    console.log("This is Two");
+}
+
+var student_name = "Kumar"; // Global Scope - Access within the file.
+var student_email; // Global Automatic Scope - Access within the file. 
+
+function test(){
+  var result = "Pass"; // Local Scope - Access within the function.
+  student_email = "test@example.com";
+  console.log("All Students are",result);
+}
+test();
+
+function Students_details(){
+  console.log(student_email);;
+}
+Students_details();
+
+function print_name(){
+  try{
+    console.log(student_name);
+    console.log(student_email);
+    console.log(student_Information);
+    console.log(student);
+    console.log(student_Information);
+    alert("Success");
+  }
+  catch(e){
+    console.log(e);
+    alert("failed");
+  }
 }
