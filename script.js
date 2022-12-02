@@ -2,7 +2,7 @@
 // Variable_name -> Any reasonable text value, a-z, A-Z, 0-9, $,
 
 // Number -> Any Numberical Value from Positive, Negative, Decimal, Fractional
-var user_age = 24;
+var user_age = 24; 
 console.log(user_age);
 
 // string -> Any value which is typed inside double quotes or single quotes.
@@ -45,7 +45,7 @@ console.log(student_Information);
  */
 
  // To read a value from object -> object_variable_name.key;
- console.log(student_Information.name);
+ console.log(student_Information_1.name);
  console.log(student_Information.result);
 
  // To edit a value from object -> object_variable_name.key = value;
@@ -55,7 +55,7 @@ console.log(student_Information);
  // To Add a new value to object -> object_variable_name.NewKey = value;
  student_Information.mobile_number = 123456788;
  student_Information.grade = "A+";
- console.log(student_Information.grade);
+ console.log(student_Information);
 
  // To Delete a value from object -> delete object_variable_name.key;
  delete student_Information.result;
@@ -64,7 +64,7 @@ console.log(student_Information);
  //-----------OBJECT------------
 
  // ARRAY
- // Syntax - var array_variable_name = [value1, value2, value3,..., valueN];
+ // Syntax - var array_variable_name = [{value1, value2, value3,..., valueN}];
  var record_list = [ 
     {
         name: "Velu",
@@ -94,11 +94,11 @@ console.log(student_Information);
   record_list[0].name = "Vasu";
   console.log(record_list[0].name);
 
-  // To add a new value to Array - array_variable_name.push(value); -> Insert Last in array
+  // To add a new value to Array - array_variable_name.push({value}); -> Insert Last in array
   record_list.push({name: "Vikram", age: 45});
   console.log(record_list);
 
-  // To change the Direction of the value in Array - array_variable_name.unshift(value); ->  Insert First in Array
+  // To change the Direction of the value in Array - array_variable_name.unshift({value}); ->  Insert First in Array
   record_list.unshift({name: "kumar", age: 30});
   console.log(record_list); 
 
@@ -114,7 +114,7 @@ console.log(student_Information);
   function function_name(var_name_1, var_name_2,...var_name_N){// Arguments
     // Code of Block
   };
-
+  function_name();
   function_name -> Proper Text value -> a-z, A-Z, 0-9
 
   To Run/Execute a Function :
@@ -122,7 +122,7 @@ console.log(student_Information);
 
   function_name(value1, value2....valueN); //Parameters
   */
-
+  
   function on_display(){
     var number_1 = prompt("Enter Number 1 Value");
     var value_1 = parseInt(number_1);
@@ -158,7 +158,6 @@ console.log(student_Information);
   3. Comparison Operator --> ==, ===, <, <=, >, >=, !=, !==
   4. Logical Operator --> &&, ||, !
 */
-
 //Syntax : IF-ELSE
 // if(condition){
 //   // Code Block 1
@@ -227,7 +226,7 @@ else{
 //   // Code Block
 // }
 
-for(var count = 1; count <= 500; count++){
+for(var count = 1; count <= 5; count++){
   console.log("The Loop is running on ", count, " times")
 }
 
@@ -287,18 +286,18 @@ do{
 }while(count <=10);
 
 //Syntax - Switch Case
-// Switch (expression){
-//  case value 1:
+// switch (expression){
+//  case  1:
     // Code Block
   //  break;
-// case value 2:
+// case  2:
   // Code Block
   // break;
 //  default:
     // Code Block  
 //}
 
-switch(2){
+switch(1){
   case 1:
     console.log("This is One");
     break;
@@ -317,7 +316,7 @@ function test(){
 test();
 
 function Students_details(){
-  console.log(student_email);;
+  console.log(student_email);
 }
 Students_details();
 
@@ -326,12 +325,111 @@ function print_name(){
     console.log(student_name);
     console.log(student_email);
     console.log(student_Information);
-    console.log(student);
-    console.log(student_Information);
+    // console.log(student);
+    console.log(student_Information_1);
     alert("Success");
   }
   catch(e){
     console.log(e);
-    alert("failed");
+    alert("Error");
   }
+}
+
+// Local Storage (Permanent) -> Set a new value, Read a value, edit value, Delete Particular value  
+// Max Size -> 10 to 13 mb
+
+// Syntax -> Set a new value
+// localStorage.setItem("key", "value");
+// Key -> Similar to variable_name -> It should contain a-z, A-Z, 0-9,_, $
+// value -> Number, String, Boolean
+
+ localStorage.setItem("username", "MR.ABC");
+
+var stored_username = localStorage.setItem("username", "MR.ABC");
+console.log(localStorage);
+
+// Syntax to Read a value in localStorage
+localStorage.getItem("key");
+
+var stored_username = localStorage.getItem("username");
+
+// Syntax to Edit a value in localStorage
+localStorage.setItem("key", "new value");
+
+localStorage.setItem("username", "Mr.XYZ");
+
+// Syntax to Delete a particular value in localStorage
+localStorage.removeItem("key");
+
+// Syntax to clear all values in localStorage
+localStorage.clear();
+
+var contact_detail ={
+  door_number: 4,
+  street_name: "XYZ Street",
+  area: "ABC Area",
+  pin_code: 600021
+}
+
+var string_contact_detail = JSON.stringify(contact_detail);
+var stringValue = localStorage.getItem("contact_detail");
+var actual_contact = JSON.parse(stringValue);
+
+// Session Storage ( Temporary Storage) -> Set a new value, Read a value, Edit a value, Delete a particular value
+
+// Syntax
+// sessionStorage.setItem("Key", "value");
+
+// sessionStorage.setItem("username", "Muthukumar@gmail.com");
+
+// Syntax
+// Read a value
+
+// sessionStorage.getItem("username");
+
+//syntax
+// Remove a particular value
+
+// sessionStorage.removeItem("username");
+
+//syntax
+// clear all values
+
+// sessionStorage.clear();
+
+// Timers
+// setTimeout - Its used to delay the code execution
+
+// setTimeout(function(){
+//   code block
+// } ,time_milliseconds);
+
+// 1000 ms -> 1 second 
+
+function contest_alert(){
+  setTimeout(function(){
+    alert("Win a exciting opportunity to grab this prize!")
+  }, 5000)
+}
+(function(){
+  contest_alert();
+})();
+
+// setInterval - It is used to run a code on the given time interval
+
+// setInterval(function(){
+//   code block
+// }, milliseconds);
+
+// setInterval(function(){
+//   console.log("Hi there, Welcome!")
+// }, 3000);
+
+var time = setInterval(function(){
+  console.log("Hi there, Welcome!")
+ }, 3000);
+
+// clearInterval -> It will stop the time interval
+function stopSetInterval(){
+  clearInterval(time);
 }
